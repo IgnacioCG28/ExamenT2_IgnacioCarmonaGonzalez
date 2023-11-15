@@ -9,8 +9,18 @@
     <style>
         body {
             font-family: monospace;
-            color: rgb(30, 84, 31);
-            background-color: rgb(69, 69, 69);
+            font-size: 1rem;
+            color: rgb(38, 137, 38);
+            background-color: rgb(41, 41, 41);
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+            text-decoration: underline;
+            margin: 10px;
         }
     </style>
 </head>
@@ -18,10 +28,12 @@
 <body>
     <h1>¡Menú barato y rico!</h1>
     <?php
+
+    //GitHub: https://github.com/IgnacioCG28/ExamenT2_IgnacioCarmonaGonzalez.git
     include("esqueleto.php");
     // Ejemplo de uso
     mostrarMenu($articulos);
-    echo '<h2>Los más saboreados!</h2>';
+    echo '<h2>¡Los más saboreados!</h2>';
     mostrarMasVendidos($articulos);
     echo '<h2>¡Los más Hot!</h2>';
     mostrarMasLucrativos($articulos);

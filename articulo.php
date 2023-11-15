@@ -4,16 +4,16 @@ class Articulo {
     public $nombre;
     public $coste;
     public $precio;
-    public $contador;
+    public $qty;
 
-    public function __construct($nombre, $coste, $precio, $contador) {
+    public function __construct($nombre, $coste, $precio, $qty) {
         $this->nombre = $nombre;
         $this->coste = $coste;
         $this->precio = $precio;
-        $this->contador = $contador;
+        $this->qty = $qty;
     }
 
     public function calcularDinares() {
-        return ($this->precio - $this->coste) * $this->contador;
+        return ($this->precio - $this->coste) * $this->qty;
     }
 }
