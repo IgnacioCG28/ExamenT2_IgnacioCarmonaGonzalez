@@ -9,8 +9,18 @@
     <style>
         body {
             font-family: monospace;
-            color: rgb(30, 84, 31);
-            background-color: rgb(69, 69, 69);
+            font-size: 1rem;
+            color: rgb(38, 137, 38);
+            background-color: rgb(41, 41, 41);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        h2{
+            text-decoration: underline;
+            margin: 5px
         }
     </style>
 </head>
@@ -21,7 +31,7 @@
     include("esqueleto.php");
     // Ejemplo de uso
     mostrarMenu($articulos);
-    echo '<h2>Los más saboreados!</h2>';
+    echo '<h2>¡Los más saboreados!</h2>';
     mostrarMasVendidos($articulos);
     echo '<h2>¡Los más Hot!</h2>';
     mostrarMasLucrativos($articulos);
