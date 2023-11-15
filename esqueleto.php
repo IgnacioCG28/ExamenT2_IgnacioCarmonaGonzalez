@@ -54,15 +54,17 @@ function mostrarMasVendidos($articulos) {
     });
 
     for ($i = 0; $i < 3; $i++) {
-        echo $articulos[$i]->nombre . ' - Vendidos: ' . $articulos[$i]->contador . '<br>';
+        echo $articulos[$i]->nombre . ' - Vendidos: <strong>' . $articulos[$i]->contador . '</strong><br>';
     }
 }
 
 function mostrarMasLucrativos($articulos) {
-echo '<h2>Los más hot!</h2>';
-usort($articulos, function($a, $b) {
-    return $b->contador - $a->contador;
-});
+    echo '<h1>¡Los más Hot!</h1>';
+    usort($articulos, function($a, $b) {
+        return $b->calcularDinares() - $a->calcularDinares();
+    });
 
-
+    foreach ($articulos as $articulo) {
+        echo $articulo->nombre . ' - Beneficio de: <strong>' . $articulo->calcularDinares() . '€</strong> <br>';
+    }
 }
