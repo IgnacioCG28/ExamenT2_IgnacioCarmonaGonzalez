@@ -50,18 +50,18 @@ function mostrarMenu($articulos) {
 function mostrarMasVendidos($articulos) {
     echo '<h2>Los más saboreados!</h2>';
     usort($articulos, function($a, $b) {
-        return $b->numerin - $a->numerin;
+        return $b->contador - $a->contador;
     });
 
     for ($i = 0; $i < 3; $i++) {
-        echo $articulos[$i]->nombre . ' - Vendidos: ' . $articulos[$i]->numerin . '<br>';
+        echo $articulos[$i]->nombre . ' - Vendidos: ' . $articulos[$i]->contador . '<br>';
     }
 }
 
 function mostrarMasLucrativos($articulos) {
 echo '<h2>Los más hot!</h2>';
 usort($articulos, function($a, $b) {
-    return $b->numerin - $a->numerin;
+    return $b->contador - $a->contador;
 });
 
 
