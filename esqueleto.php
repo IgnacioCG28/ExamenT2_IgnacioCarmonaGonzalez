@@ -1,7 +1,10 @@
 <?php
+//GitHub: 
+
 // solicitar los archivos "articulo.php", "bebida.php", "pizza.php";
-include("pizza.php");
+include("articulo.php");
 include("bebida.php");
+include("pizza.php");
 // Inicialización de los artículos
 $articulos = [
     new Articulo("Lasagna", 3.50, 7.00, 20),
@@ -13,38 +16,27 @@ $articulos = [
     new Bebida("Refresco", 1.00, 2.00, 50, false),
     new Bebida("Cerveza", 1.50, 3.00, 40, true)
 ];
-
 // Ejemplo de uso
-
 
 mostrarMenu($articulos);
 mostrarMasVendidos($articulos);
 mostrarMasLucrativos($articulos);
 
-class Articulo {
-    private $nombre;
-    private $coste;
-    private $precio;
-    private $contador;
 
-    public function __construct($nombre, $coste, $precio, $contador) {
-        $this->nombre = $nombre;
-        $this->coste = $coste;
-        $this->precio = $precio;
-        $this->contador = $contador;
-    }
-
-    public function calcularDinares() {
-        return ($this->precio - $this->coste) * $this->contador;
-    }
-}
 
 function mostrarMenu($articulos) {
 
 }
 
 function mostrarMasVendidos($articulos) {
+    echo '<h1>Los más vendidos</h1>';
+    usort($articulos, function($a, $b) {
+        return $b->contador - $a->contador;
+    });
 
+    for ($i = 0; $i < 3; $i++) {
+        echo $articulos[$i]->nombre . ' - Vendidos: ' . $articulos[$i]->contador . '<br>';
+    }
 }
 
 function mostrarMasLucrativos($articulos) {
