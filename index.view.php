@@ -8,7 +8,9 @@
 
     <style>
         body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: monospace;
+            color: rgb(30, 84, 31);
+            background-color: rgb(69, 69, 69);
         }
     </style>
 </head>
@@ -19,7 +21,9 @@
     include("esqueleto.php");
     // Ejemplo de uso
     mostrarMenu($articulos);
+    echo '<h2>Los más saboreados!</h2>';
     mostrarMasVendidos($articulos);
+    echo '<h2>¡Los más Hot!</h2>';
     mostrarMasLucrativos($articulos);
     ?>
 

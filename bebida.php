@@ -1,9 +1,9 @@
 <?php
 class Bebida extends Articulo {
-    public $conSustancia;
+    public $alcohol;
 
-    public function __construct($nombre, $coste, $precio, $contador, $conSustancia) {
+    public function __construct($nombre, $coste, $precio, $contador, $alcohol) {
         parent::__construct($nombre, $coste, $precio, $contador);
-        $this->conSustancia = $conSustancia;
+        $this->alcohol = $alcohol;
     }
 }

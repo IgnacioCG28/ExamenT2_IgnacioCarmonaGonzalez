@@ -14,7 +14,7 @@ $articulos = [
     new Pizza("Pizza Pepperoni", 5.00, 10.00, 25, ["Tomate", "Mozzarella", "Pepperoni"]),
     new Pizza("Pizza Vegetal", 4.50, 9.00, 18, ["Tomate", "Mozzarella", "Verduras Variadas"]),
     new Pizza("Pizza 4 quesos", 5.50, 11.00, 20, ["Mozzarella", "Gorgonzola", "Parmesano", "Fontina"]),
-    new Pizza("Pizza de Nacho", 10.00, 15.50, 5, ["Mozzarella", "Salsa Carolina Reaper", "Parmesano", "Tomate"]),
+    new Pizza("Pizza de Nacho", 10.00, 15.50, 50, ["Mozzarella", "Salsa Carolina Reaper", "Parmesano", "Tomate"]),
     new Bebida("Refresco", 1.00, 2.00, 50, false),
     new Bebida("Cerveza", 1.50, 3.00, 40, true)
 ];
@@ -45,7 +45,6 @@ function mostrarMenu($articulos)
 
 function mostrarMasVendidos($articulos)
 {
-    echo '<h2>Los más saboreados!</h2>';
     usort($articulos, function ($a, $b) {
         return $b->contador - $a->contador;
     });
@@ -57,7 +56,6 @@ function mostrarMasVendidos($articulos)
 
 function mostrarMasLucrativos($articulos)
 {
-    echo '<h1>¡Los más Hot!</h1>';
     usort($articulos, function ($a, $b) {
         return $b->calcularDinares() - $a->calcularDinares();
     });
