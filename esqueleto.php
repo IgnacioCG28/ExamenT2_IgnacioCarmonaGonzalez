@@ -1,5 +1,5 @@
 <?php
-//GitHub: 
+//GitHub: https://github.com/IgnacioCG28/ExamenT2_IgnacioCarmonaGonzalez.git
 
 // solicitar los archivos "articulo.php", "bebida.php", "pizza.php";
 include("articulo.php");
@@ -25,20 +25,44 @@ mostrarMasLucrativos($articulos);
 
 
 function mostrarMenu($articulos) {
+    echo '<h2>Pizzas</h2>';
+    foreach ($articulos as $articulo) {
+        if ($articulo instanceof Pizza) {
+            echo $articulo->nombre . '<br>';
+        }
+    }
 
+    echo '<h2>Bebidas</h2>';
+    foreach ($articulos as $articulo) {
+        if ($articulo instanceof Bebida) {
+            echo $articulo->nombre . '<br>';
+        }
+    }
+
+    echo '<h2>Otros</h2>';
+    foreach ($articulos as $articulo) {
+        if (!($articulo instanceof Pizza) && !($articulo instanceof Bebida)) {
+            echo $articulo->nombre . '<br>';
+        }
+    }
 }
 
 function mostrarMasVendidos($articulos) {
-    echo '<h1>Los más vendidos</h1>';
+    echo '<h2>Los más saboreados!</h2>';
     usort($articulos, function($a, $b) {
-        return $b->contador - $a->contador;
+        return $b->numerin - $a->numerin;
     });
 
     for ($i = 0; $i < 3; $i++) {
-        echo $articulos[$i]->nombre . ' - Vendidos: ' . $articulos[$i]->contador . '<br>';
+        echo $articulos[$i]->nombre . ' - Vendidos: ' . $articulos[$i]->numerin . '<br>';
     }
 }
 
 function mostrarMasLucrativos($articulos) {
+echo '<h2>Los más hot!</h2>';
+usort($articulos, function($a, $b) {
+    return $b->numerin - $a->numerin;
+});
+
 
 }
