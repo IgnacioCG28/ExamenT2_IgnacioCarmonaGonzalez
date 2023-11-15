@@ -16,13 +16,6 @@ $articulos = [
     new Bebida("Refresco", 1.00, 2.00, 50, false),
     new Bebida("Cerveza", 1.50, 3.00, 40, true)
 ];
-// Ejemplo de uso
-
-mostrarMenu($articulos);
-mostrarMasVendidos($articulos);
-mostrarMasLucrativos($articulos);
-
-
 
 function mostrarMenu($articulos) {
     echo '<h2>Pizzas</h2>';
